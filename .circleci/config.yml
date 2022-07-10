@@ -6,4 +6,4 @@ jobs:
       - image: cimg/node:15.0.1
     steps:
       - checkout
-      - run: node --versio
+      - run: npm run test:ci
