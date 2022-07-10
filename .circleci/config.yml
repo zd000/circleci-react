@@ -1,28 +1,18 @@
 version: 2.1
 
 jobs:
-  build:
+  install-and-test:
     docker:
       - image: cimg/node:15.0.1
     steps:
       - checkout
       - run:
-          name: npm install <==
-          command: npm install
+          name: install and test
+          command: 
+            npm install
+            npm run test:ci
   
-  test:
-    docker:
-      - image: cimg/node:15.0.1
-    steps:
-      - checkout
-      - run:
-          name: npm run test:ci <==
-          command: npm run test:ci
-
 workflows:
-  build-and-test:
+  install-test:
     jobs:
-      - build
-      - test:
-          requires:
-            - build
+      - install-and-test
