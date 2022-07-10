@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: npm install
+          name: npm install <==
           command: npm install
   
   test:
@@ -16,8 +16,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: npm test:ci
-          command: npm test:ci
+          name: npm run test:ci <==
+          command: npm run test:ci
 
 workflows:
   build-and-test:
